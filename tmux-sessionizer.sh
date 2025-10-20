@@ -3,8 +3,9 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-	$(find ~/dev -mindepth 3 -maxdepth 3 -type d > ~/.config/tmux/tmux-sessionizer-project-directories)
-	selected=$(cat ~/.config/tmux/tmux-sessionizer-directories ~/.config/tmux/tmux-sessionizer-project-directories | fzf)
+	# $(find ~/dev -mindepth 2 -maxdepth 2 -type d > ~/.config/tmux/tmux-sessionizer-project-directories)
+	# selected=$(cat ~/.config/tmux/tmux-sessionizer-directories ~/.config/tmux/tmux-sessionizer-project-directories | fzf)
+	selected=$(find ~/dev -mindepth 2 -maxdepth 2 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then
